@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <h1>Welcome to your Study Planner</h1>
+        <button onclick="goToQuotes()">Start</button>
+    </div>
+
+    <!-- Quotes Screen -->
+    <div id="quotesScreen" class="screen">
+        <h2 id="quoteText"></h2>
+        <button onclick="goToPlanner()">Next</button>
+    </div>
+
+    <!-- Planner Screen -->
+    <div id="plannerScreen" class="screen">
+        <h2>Add Your Tasks</h2>
+        <div class="form">
+            <input type="text" id="timeInput" placeholder="Time (hh:mm:ss)">
+            <textarea id="taskInput" rows="5" placeholder="Add 1-5 tasks (separated by commas)"></textarea>
+            <button onclick="startPlanner()">Start Timer</button>
+        </div>
+        <ul id="taskList"></ul>
+        <div id="countdown"></div>
+        <div id="controls">
+            <button onclick="pauseResumeTimer()" id="pauseBtn">⏸️ Pause</button>
+            <button onclick="cancelTasks()">❌ Cancel</button>
+        </div>
+    </div>
+
+    <!-- Reminder Popup -->
+    <div id="reminderPopup" class="popup">
+        <p>⏰ Only 15 minutes left! Extend time?</p>
+        <button onclick="extendTime()">+15 mins</button>
+        <button onclick="closePopup()">No</button>
+    </div>
+
+    <!-- Congrats Popup -->
+    <div id="congratsPopup" class="popup">
+        <p>🎉 Congratulations! You completed your tasks!</p>
+        <button onclick="resetPlanner()">Restart</button>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
